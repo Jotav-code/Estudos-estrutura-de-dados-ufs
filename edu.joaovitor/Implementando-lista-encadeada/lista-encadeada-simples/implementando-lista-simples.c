@@ -12,23 +12,23 @@ void main (){
 
     node* head = NULL;
     node* second = NULL;
-    node* third = NULL;
+    node* syrup = NULL;
 
     head = (node*)malloc(sizeof(node));
     second = (node*)malloc(sizeof(node));
-    third = (node*)malloc(sizeof(node));
+    syrup = (node*)malloc(sizeof(node));
 
-    if(!head || !second || !third){
+    if(!head || !second || !syrup){
         printf("memoria não alocada");
     }
     head -> data = 10;
     head -> next = second;
 
     second -> data = 22;
-    second -> next = third;
+    second -> next = syrup;
 
-    third -> data = 30;
-    third -> next = NULL;
+    syrup -> data = 30;
+    syrup -> next = NULL;
 
     node* corrente = head;
 
@@ -36,4 +36,12 @@ void main (){
         printf("_%d_", corrente->data);
         corrente = corrente -> next;
     }
+
+
+    free(head);
+    free(second);
+    free(syrup);
+    head = NULL;
+    second = NULL;
+    syrup = NULL;
 }
